@@ -1,0 +1,1 @@
+For instance, we can change the style of child elements when the parent is hovered by turning the parent into a group and using group and group-hover: utility classes:

@@ -1,0 +1,1 @@
+The tailwind-merge package is very useful to deal with this. It allows us to pass the base classes as the first parameter and the class name as the second parameter, ensuring that our class name overrides the default class (for a deeper dive as to how this works, see this video).
