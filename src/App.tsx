@@ -4,7 +4,9 @@ import Debounce from "./components/debounce";
 import { useDebounce } from "./components/debounce/hook/useDebounce";
 import { Comments } from "./components/reusability/bad/comments";
 import { Works } from "./styles/tailwind/dynamic-u-c/Works";
+import InputUnstyleable from "./styles/tailwind/input";
 import { SpecialButton } from "./styles/tailwind/merge";
+import { Truncate } from "./styles/truncate";
 
 function App() {
   const { handleChange, value } = useDebounce();
@@ -49,6 +51,8 @@ function App() {
         <Works />
         Merge:
         <SpecialButton className="p-3" />
+        <Truncate />
+        <InputUnstyleable />
       </div>
     </>
   );
