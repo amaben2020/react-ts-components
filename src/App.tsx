@@ -3,6 +3,7 @@ import useCopyToClipboard from "./components/clipboard/hooks/useCopyToClipboard"
 import Debounce from "./components/debounce";
 import { useDebounce } from "./components/debounce/hook/useDebounce";
 import { Comments } from "./components/reusability/bad/comments";
+import ContainerQueries from "./styles/tailwind/container-queries";
 import { Works } from "./styles/tailwind/dynamic-u-c/Works";
 import InputUnstyleable from "./styles/tailwind/input";
 import { SpecialButton } from "./styles/tailwind/merge";
@@ -53,6 +54,7 @@ function App() {
         <SpecialButton className="p-3" />
         <Truncate />
         <InputUnstyleable />
+        <ContainerQueries />
       </div>
     </>
   );

@@ -3,11 +3,11 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export const Layout = (props: LayoutProps) => {
+export const Layout = ({ nav, children }: LayoutProps) => {
   return (
     <>
-      <nav>{props.nav}</nav>
-      <main>{props.children}</main>
+      <nav>{nav}</nav>
+      <main>{children}</main>
     </>
   );
 };

@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      containers: {
+        "2xs": "16rem",
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/container-queries")],
 };
