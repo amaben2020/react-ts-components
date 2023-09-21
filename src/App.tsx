@@ -3,6 +3,7 @@ import useCopyToClipboard from "./components/clipboard/hooks/useCopyToClipboard"
 import Debounce from "./components/debounce";
 import { useDebounce } from "./components/debounce/hook/useDebounce";
 import { Comments } from "./components/reusability/bad/comments";
+import { Button } from "./styles/tailwind/button";
 import ContainerQueries from "./styles/tailwind/container-queries";
 import { Works } from "./styles/tailwind/dynamic-u-c/Works";
 import InputUnstyleable from "./styles/tailwind/input";
@@ -55,6 +56,12 @@ function App() {
         <Truncate />
         <InputUnstyleable />
         <ContainerQueries />
+        <div>
+          Class Variance Authority
+          <Button intent="primary" size="medium">
+            App Button
+          </Button>
+        </div>
       </div>
     </>
   );
