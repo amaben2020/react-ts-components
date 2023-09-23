@@ -1,10 +1,7 @@
 import "./App.css";
 import useCopyToClipboard from "./components/clipboard/hooks/useCopyToClipboard";
 import ProductCard from "./components/component-pattern/compound-pattern";
-import ProductImage from "./components/component-pattern/compound-pattern/product-card/image";
 import { data } from "./components/component-pattern/compound-pattern/product-card/mock/data";
-import ProductPrice from "./components/component-pattern/compound-pattern/product-card/price";
-import ProductTitle from "./components/component-pattern/compound-pattern/product-card/title";
 import withProductTitleAndPrice from "./components/component-pattern/compound-pattern/product-card/with-product-title-and-price";
 import Debounce from "./components/debounce";
 import { useDebounce } from "./components/debounce/hook/useDebounce";
@@ -68,18 +65,28 @@ function App() {
             App Button
           </Button>
           <Button2 text="Button 2" className="bg-green-500 border" />
-          <ProductCard>
-            <ProductImage image={data.image} title={data.title} />
-            {withProductTitleAndPrice(
-              <ProductTitle title={data.title} />,
-              <ProductPrice price={data.price} />,
-            )({
-              style: {
-                border: "1px solid gold",
-                padding: 20,
-              },
-            })}
-          </ProductCard>
+          <div className="p-10 my-5">
+            React compound component pattern:
+            <ProductCard>
+              <ProductCard.Image image={data.image} title={data.title} />
+              {withProductTitleAndPrice(
+                <ProductCard.Title title={data.title} />,
+                <ProductCard.Price price={data.price} />,
+              )({
+                style: {
+                  border: "1px solid gold",
+                  padding: 20,
+                },
+              })}
+
+              <ProductCard.ProductCategoryAndBuyNow
+                category={data.category}
+                buyNowText="Buy Now"
+              />
+
+              <ProductCard.Description description={data.description} />
+            </ProductCard>
+          </div>
         </div>
       </div>
     </>

@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { ProductContext } from "..";
+
 const ProductCategoryAndBuyNow = ({
   category,
   buyNowText,
@@ -5,10 +8,16 @@ const ProductCategoryAndBuyNow = ({
   category: string[];
   buyNowText: string;
 }) => {
+  const { setIsActive } = useContext(ProductContext);
+  const handleIsActive = () => setIsActive((p) => !p);
+
   return (
     <div className="flex items-center justify-between">
       <div>
-        <button className="bg-yellow-500 p-2 my-2 text-white">
+        <button
+          onClick={handleIsActive}
+          className="p-2 my-2 text-white bg-yellow-500"
+        >
           {buyNowText}
         </button>
       </div>
@@ -22,6 +31,7 @@ const ProductCategoryAndBuyNow = ({
       >
         {category.map((category: string) => (
           <div
+            key={category}
             style={{
               color: "white",
               margin: "10px 0 0 0",
