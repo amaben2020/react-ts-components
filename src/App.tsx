@@ -4,6 +4,7 @@ import Debounce from "./components/debounce";
 import { useDebounce } from "./components/debounce/hook/useDebounce";
 import { Comments } from "./components/reusability/bad/comments";
 import { Button } from "./styles/tailwind/button";
+import Button2 from "./styles/tailwind/button/button2";
 import ContainerQueries from "./styles/tailwind/container-queries";
 import { Works } from "./styles/tailwind/dynamic-u-c/Works";
 import InputUnstyleable from "./styles/tailwind/input";
@@ -61,6 +62,7 @@ function App() {
           <Button intent="primary" size="medium">
             App Button
           </Button>
+          <Button2 text="Button 2" className="bg-green-500 border" />
         </div>
       </div>
     </>
