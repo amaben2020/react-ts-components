@@ -1,5 +1,6 @@
 import "./App.css";
 import useCopyToClipboard from "./components/clipboard/hooks/useCopyToClipboard";
+import ProductCard from "./components/component-pattern/compound-pattern";
 import Debounce from "./components/debounce";
 import { useDebounce } from "./components/debounce/hook/useDebounce";
 import { Comments } from "./components/reusability/bad/comments";
@@ -63,6 +64,7 @@ function App() {
             App Button
           </Button>
           <Button2 text="Button 2" className="bg-green-500 border" />
+          <ProductCard />
         </div>
       </div>
     </>
