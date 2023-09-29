@@ -3,6 +3,7 @@ import useCopyToClipboard from "./components/clipboard/hooks/useCopyToClipboard"
 import ProductCard from "./components/component-pattern/compound-pattern";
 import { data } from "./components/component-pattern/compound-pattern/product-card/mock/data";
 import withProductTitleAndPrice from "./components/component-pattern/compound-pattern/product-card/with-product-title-and-price";
+import CssCustomProperties from "./components/css-custom-properties";
 import Debounce from "./components/debounce";
 import { useDebounce } from "./components/debounce/hook/useDebounce";
 import { Comments } from "./components/reusability/bad/comments";
@@ -17,6 +18,8 @@ import { Truncate } from "./styles/truncate";
 function App() {
   const { handleChange, value } = useDebounce();
   const { value: result, handleCopy } = useCopyToClipboard();
+
+  const name = "Mary from App";
 
   return (
     <>
@@ -88,6 +91,16 @@ function App() {
             </ProductCard>
           </div>
         </div>
+      </div>
+
+      <div>
+        Custom Properties:
+        <CssCustomProperties />
+      </div>
+
+      <div>
+        <Button2 className="buttonify" text="Hello" />
+        <Button2 className="button--success" text="Hello" />
       </div>
     </>
   );
