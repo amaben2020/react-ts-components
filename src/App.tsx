@@ -1,28 +1,71 @@
-import "./App.css";
-import useCopyToClipboard from "./components/clipboard/hooks/useCopyToClipboard";
-import ProductCard from "./components/component-pattern/compound-pattern";
-import { data } from "./components/component-pattern/compound-pattern/product-card/mock/data";
-import withProductTitleAndPrice from "./components/component-pattern/compound-pattern/product-card/with-product-title-and-price";
-import CssCustomProperties from "./components/css-custom-properties";
-import Debounce from "./components/debounce";
-import { useDebounce } from "./components/debounce/hook/useDebounce";
-import { Comments } from "./components/reusability/bad/comments";
-import { Button } from "./styles/tailwind/button";
-import Button2 from "./styles/tailwind/button/button2";
-import ContainerQueries from "./styles/tailwind/container-queries";
-import { Works } from "./styles/tailwind/dynamic-u-c/Works";
-import InputUnstyleable from "./styles/tailwind/input";
-import { SpecialButton } from "./styles/tailwind/merge";
-import { Truncate } from "./styles/truncate";
+import localFont from '@next/font/local';
+import './App.css';
+import useCopyToClipboard from './components/clipboard/hooks/useCopyToClipboard';
+import ProductCard from './components/component-pattern/compound-pattern';
+import { data } from './components/component-pattern/compound-pattern/product-card/mock/data';
+import withProductTitleAndPrice from './components/component-pattern/compound-pattern/product-card/with-product-title-and-price';
+import CssCustomProperties from './components/css-custom-properties';
+import Debounce from './components/debounce';
+import { useDebounce } from './components/debounce/hook/useDebounce';
+import { Comments } from './components/reusability/bad/comments';
+import { Button } from './styles/tailwind/button';
+import Button2 from './styles/tailwind/button/button2';
+import ContainerQueries from './styles/tailwind/container-queries';
+import { Works } from './styles/tailwind/dynamic-u-c/Works';
+import InputUnstyleable from './styles/tailwind/input';
+import { SpecialButton } from './styles/tailwind/merge';
+import { Truncate } from './styles/truncate';
 
+export const gothic = localFont({
+  src: [
+    {
+      path: '../fonts/geomanist/geomanist-light.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/geomanist/geomanist-regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/geomanist/geomanist-medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/geomanist/geomanist-bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-geomanist',
+});
+
+const raleway = localFont({
+  src: [
+    {
+      path: '../public/fonts/Raleway/static/Raleway-Regular.ttf',
+      weight: '400',
+    },
+    {
+      path: '../public/fonts/Raleway/static/Raleway-Bold.ttf',
+      weight: '700',
+    },
+  ],
+  variable: '--font-raleway',
+});
 function App() {
   const { handleChange, value } = useDebounce();
   const { value: result, handleCopy } = useCopyToClipboard();
 
-  const name = "Mary from App";
-
   return (
-    <>
+    <main
+      className={clsx(
+        `${raleway.variable} font-sans`,
+        `${gothic.variable} font-sans`
+      )}
+    >
       {value}
       <Debounce handleChange={handleChange} />
 
@@ -30,7 +73,7 @@ function App() {
         style={{
           marginTop: 20,
           padding: 20,
-          border: "1px solid red",
+          border: '1px solid red',
         }}
       >
         Bad:
@@ -47,7 +90,7 @@ function App() {
         <button
           onClick={() =>
             handleCopy(
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusanda",
+              'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusanda'
             )
           }
         >
@@ -67,17 +110,17 @@ function App() {
           <Button intent="primary" size="medium">
             App Button
           </Button>
-          <Button2 text="Button 2" className="bg-green-500 border" />
-          <div className="p-10 my-5">
+          <Button2 text="Button 2" className="border bg-green-500" />
+          <div className="my-5 p-10">
             React compound component pattern:
             <ProductCard>
               <ProductCard.Image image={data.image} title={data.title} />
               {withProductTitleAndPrice(
                 <ProductCard.Title title={data.title} />,
-                <ProductCard.Price price={data.price} />,
+                <ProductCard.Price price={data.price} />
               )({
                 style: {
-                  border: "1px solid gold",
+                  border: '1px solid gold',
                   padding: 20,
                 },
               })}
@@ -95,14 +138,14 @@ function App() {
 
       <div>
         Custom Properties:
-        <CssCustomProperties variable="NoSugar"/>
+        <CssCustomProperties variable="NoSugar" />
       </div>
 
       <div>
         <Button2 className="buttonify" text="Hello" />
         <Button2 className="theme-swiss button--success" text="Hello" />
       </div>
-    </>
+    </main>
   );
 }
 

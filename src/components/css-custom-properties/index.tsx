@@ -5,8 +5,6 @@ import { TThemeVariant } from './styles/theme2';
 const CssCustomProperties = ({ variable }: { variable: TThemeVariant }) => {
   const { variables } = useThemeConfig2(variable);
 
-  console.log(variables);
-
   return (
     <div className="wrapper" style={variables}>
       CssCustomProperties
