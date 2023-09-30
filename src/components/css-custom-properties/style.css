@@ -4,3 +4,7 @@
   background-image: var(--theme-texture);
   @apply border;
 }
+
+.amaben {
+  color: var(--amaben);
+}
