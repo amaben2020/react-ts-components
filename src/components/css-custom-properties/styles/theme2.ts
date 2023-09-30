@@ -4,12 +4,15 @@ export enum ThemeVariants2 {
   Soya = "Soya",
   Oat = "Oat",
   Almond = "Almond",
-  NotMilk = "Not Milk",
+  NotMilk = "NotMilk",
   Protein = "Protein",
-  NoSugar = "No Sugar",
+  NoSugar = "NoSugar",
 }
+
+export type TThemeVariant = keyof typeof ThemeVariants2;
+
 type TThemeVariants2 = Record<
-  ThemeVariants2,
+  TThemeVariant,
   {
     themeId: string;
     texture: string;

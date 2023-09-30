@@ -1,6 +1,7 @@
-import { ThemeVariants2, themeVariants2 } from "../styles/theme2";
+import { CSSProperties } from "react";
+import { TThemeVariant, themeVariants2 } from "../styles/theme2";
 
-export const useThemeConfig2 = (variant: ThemeVariants2) => {
+export const useThemeConfig2 = (variant: TThemeVariant) => {
   const {
     themeId,
     colors: { font, highlight },
@@ -13,6 +14,6 @@ export const useThemeConfig2 = (variant: ThemeVariants2) => {
       "--theme-texture": `url(${otherProps.texture})`,
       "--theme-color": highlight,
       "--theme-font": font,
-    },
+    } as CSSProperties,
   };
 };
