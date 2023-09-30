@@ -1,72 +1,18 @@
-// step 1: create an enum with the different themes
+import { ThemeVariants2, themeVariants2 } from "../styles/theme2";
 
-export enum ThemeVariants {
-  Soya = "Soya",
-  Oat = "Oat",
-  Almond = "Almond",
-  NotMilk = "Not Milk",
-  Protein = "Protein",
-  NoSugar = "No Sugar",
-}
-type TThemeVariants = Record<
-  ThemeVariants,
-  {
-    themeId: string;
-    texture: string;
-    colors: {
-      font: string;
-      highlight: string;
-    };
-  }
->;
-export const themeVariants: TThemeVariants = {
-  [ThemeVariants.Almond]: {
-    themeId: ThemeVariants.Almond.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
-    colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
-    },
-  },
+export const useThemeConfig2 = (variant: ThemeVariants2) => {
+  const {
+    themeId,
+    colors: { font, highlight },
+    ...otherProps
+  } = themeVariants2[variant];
 
-  [ThemeVariants.NoSugar]: {
-    themeId: ThemeVariants.NoSugar.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
-    colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
+  return {
+    themeId: themeId,
+    variables: {
+      "--theme-texture": `url(${otherProps.texture})`,
+      "--theme-color": highlight,
+      "--theme-font": font,
     },
-  },
-  [ThemeVariants.NotMilk]: {
-    themeId: ThemeVariants.NotMilk.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
-    colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
-    },
-  },
-  [ThemeVariants.Oat]: {
-    themeId: ThemeVariants.Oat.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
-    colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
-    },
-  },
-  [ThemeVariants.Protein]: {
-    themeId: ThemeVariants.Protein.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
-    colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
-    },
-  },
-  [ThemeVariants.Soya]: {
-    themeId: ThemeVariants.Soya.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
-    colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
-    },
-  },
+  };
 };
