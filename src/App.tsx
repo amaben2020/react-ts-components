@@ -100,7 +100,7 @@ function App() {
 
       <div>
         <Button2 className="buttonify" text="Hello" />
-        <Button2 className="button--success" text="Hello" />
+        <Button2 className="theme-swiss button--success" text="Hello" />
       </div>
     </>
   );

@@ -25,7 +25,7 @@ type TThemeVariants2 = Record<
 export const themeVariants2: TThemeVariants2 = {
   [ThemeVariants2.Almond]: {
     themeId: ThemeVariants2.Almond.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
+    texture: "/images/texture.jpg",
     colors: {
       font: "#279FD0",
       highlight: "#45a0c4",

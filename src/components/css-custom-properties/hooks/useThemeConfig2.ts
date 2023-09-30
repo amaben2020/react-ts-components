@@ -11,7 +11,7 @@ export const useThemeConfig2 = (variant: TThemeVariant) => {
   return {
     themeId: themeId,
     variables: {
-      "--theme-texture": `url(${otherProps.texture})`,
+      "--theme-texture": `url(${String(otherProps.texture)})`,
       "--theme-color": highlight,
       "--theme-font": font,
     } as CSSProperties,
