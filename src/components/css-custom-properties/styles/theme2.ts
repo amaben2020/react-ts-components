@@ -34,7 +34,7 @@ export const themeVariants2: TThemeVariants2 = {
 
   [ThemeVariants2.NoSugar]: {
     themeId: ThemeVariants2.NoSugar.toLowerCase(),
-    texture: '/images/textures/almond.jpg',
+    texture: '/images/texture.jpg',
     colors: {
       font: '#279FD0',
       highlight: '#45a0c4',
