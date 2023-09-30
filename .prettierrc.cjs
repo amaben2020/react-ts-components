@@ -5,7 +5,7 @@ module.exports = {
   printWidth: 80,
   semi: true,
   plugins: ["prettier-plugin-tailwindcss"],
-  tailwindConfig: "./tailwind.config.ts",
+  tailwindConfig: "./tailwind.config.js",
   tailwindFunctions: ["clsx"],
   organizeImportsSkipDestructiveCodeActions: true,
 };

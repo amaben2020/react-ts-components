@@ -1,12 +1,12 @@
 // step 1: create an enum with the different themes
 
 export enum ThemeVariants2 {
-  Soya = "Soya",
-  Oat = "Oat",
-  Almond = "Almond",
-  NotMilk = "NotMilk",
-  Protein = "Protein",
-  NoSugar = "NoSugar",
+  Soya = 'Soya',
+  Oat = 'Oat',
+  Almond = 'Almond',
+  NotMilk = 'NotMilk',
+  Protein = 'Protein',
+  NoSugar = 'NoSugar',
 }
 
 export type TThemeVariant = keyof typeof ThemeVariants2;
@@ -25,51 +25,51 @@ type TThemeVariants2 = Record<
 export const themeVariants2: TThemeVariants2 = {
   [ThemeVariants2.Almond]: {
     themeId: ThemeVariants2.Almond.toLowerCase(),
-    texture: "/images/texture.jpg",
+    texture: '/images/texture.jpg',
     colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
+      font: '#279FD0',
+      highlight: '#45a0c4',
     },
   },
 
   [ThemeVariants2.NoSugar]: {
     themeId: ThemeVariants2.NoSugar.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
+    texture: '/images/textures/almond.jpg',
     colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
+      font: '#279FD0',
+      highlight: '#45a0c4',
     },
   },
   [ThemeVariants2.NotMilk]: {
     themeId: ThemeVariants2.NotMilk.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
+    texture: '/images/textures/almond.jpg',
     colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
+      font: '#279FD0',
+      highlight: '#45a0c4',
     },
   },
   [ThemeVariants2.Oat]: {
     themeId: ThemeVariants2.Oat.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
+    texture: '/images/textures/almond.jpg',
     colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
+      font: '#279FD0',
+      highlight: '#45a0c4',
     },
   },
   [ThemeVariants2.Protein]: {
     themeId: ThemeVariants2.Protein.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
+    texture: '/images/textures/almond.jpg',
     colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
+      font: '#279FD0',
+      highlight: '#45a0c4',
     },
   },
   [ThemeVariants2.Soya]: {
     themeId: ThemeVariants2.Soya.toLowerCase(),
-    texture: "/images/textures/almond.jpg",
+    texture: '/images/textures/almond.jpg',
     colors: {
-      font: "#279FD0",
-      highlight: "#45a0c4",
+      font: '#279FD0',
+      highlight: '#45a0c4',
     },
   },
 };

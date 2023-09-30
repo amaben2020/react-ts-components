@@ -12,14 +12,25 @@
   }
 }
 
+/* https://www.youtube.com/watch?v=MAtaT8BZEAo, https://play.tailwindcss.com/YelhilBeHb */
 @layer base {
   :root {
-    --color-text-inverted: "#d4d4d4";
-    --color-text-base: "#000";
+    --color-text-inverted: #d4d4d4;
+    --color-text-base: purple;
+    --color-text-muted: #d1d1d1;
   }
 
   .theme-swiss {
-    --color-text-inverted: "#fff";
-    --color-text-base: "#000";
+    --color-text-inverted: #fff;
+    --color-text-base: #000;
+  }
+  .theme-neon {
+    --color-text-base: 17, 24, 2;
+    --color-text-muted: 47, 67, 6;
+    --color-text-inverted: 235, 250, 204;
+    --color-fill: 179, 255, 23;
+    --color-button-accent: 36, 52, 3;
+    --color-button-accent-hover: 55, 79, 5;
+    --color-button-muted: 212, 255, 122;
   }
 }

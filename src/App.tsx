@@ -95,7 +95,7 @@ function App() {
 
       <div>
         Custom Properties:
-        <CssCustomProperties />
+        <CssCustomProperties variable="NoSugar"/>
       </div>
 
       <div>
