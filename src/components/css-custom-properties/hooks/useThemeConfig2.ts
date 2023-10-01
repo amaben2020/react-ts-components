@@ -5,13 +5,13 @@ export const useThemeConfig2 = (variant: TThemeVariant) => {
   const {
     themeId,
     colors: { font, highlight },
-    texture,
+    ...otherProps
   } = themeVariants2[variant];
 
   return {
     themeId: themeId,
     variables: {
-      '--theme-texture': `url(${texture})`,
+      '--theme-texture': `url(${otherProps.texture})`,
       '--theme-color': highlight,
       '--theme-font': font,
     } as CSSProperties,

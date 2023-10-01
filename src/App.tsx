@@ -1,4 +1,3 @@
-import localFont from '@next/font/local';
 import './App.css';
 import useCopyToClipboard from './components/clipboard/hooks/useCopyToClipboard';
 import ProductCard from './components/component-pattern/compound-pattern';
@@ -13,59 +12,16 @@ import Button2 from './styles/tailwind/button/button2';
 import ContainerQueries from './styles/tailwind/container-queries';
 import { Works } from './styles/tailwind/dynamic-u-c/Works';
 import InputUnstyleable from './styles/tailwind/input';
+import { Layout } from './styles/tailwind/layout';
 import { SpecialButton } from './styles/tailwind/merge';
 import { Truncate } from './styles/truncate';
 
-export const gothic = localFont({
-  src: [
-    {
-      path: '../fonts/geomanist/geomanist-light.woff2',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/geomanist/geomanist-regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/geomanist/geomanist-medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/geomanist/geomanist-bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-geomanist',
-});
-
-const raleway = localFont({
-  src: [
-    {
-      path: '../public/fonts/Raleway/static/Raleway-Regular.ttf',
-      weight: '400',
-    },
-    {
-      path: '../public/fonts/Raleway/static/Raleway-Bold.ttf',
-      weight: '700',
-    },
-  ],
-  variable: '--font-raleway',
-});
 function App() {
   const { handleChange, value } = useDebounce();
   const { value: result, handleCopy } = useCopyToClipboard();
 
   return (
-    <main
-      className={clsx(
-        `${raleway.variable} font-sans`,
-        `${gothic.variable} font-sans`
-      )}
-    >
+    <main>
       {value}
       <Debounce handleChange={handleChange} />
 
@@ -144,6 +100,10 @@ function App() {
       <div>
         <Button2 className="buttonify" text="Hello" />
         <Button2 className="theme-swiss button--success" text="Hello" />
+      </div>
+
+      <div>
+        <Layout />
       </div>
     </main>
   );
