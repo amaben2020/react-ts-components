@@ -6,6 +6,7 @@ import withProductTitleAndPrice from './components/component-pattern/compound-pa
 import CssCustomProperties from './components/css-custom-properties';
 import Debounce from './components/debounce';
 import { useDebounce } from './components/debounce/hook/useDebounce';
+import MaskImage from './components/mask';
 import { Comments } from './components/reusability/bad/comments';
 import { Button } from './styles/tailwind/button';
 import Button2 from './styles/tailwind/button/button2';
@@ -15,7 +16,6 @@ import InputUnstyleable from './styles/tailwind/input';
 import { Layout } from './styles/tailwind/layout';
 import { SpecialButton } from './styles/tailwind/merge';
 import { Truncate } from './styles/truncate';
-
 function App() {
   const { handleChange, value } = useDebounce();
   const { value: result, handleCopy } = useCopyToClipboard();
@@ -104,6 +104,10 @@ function App() {
 
       <div>
         <Layout />
+      </div>
+
+      <div>
+        <MaskImage/>
       </div>
     </main>
   );
