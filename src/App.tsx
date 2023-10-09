@@ -7,6 +7,7 @@ import CssCustomProperties from './components/css-custom-properties';
 import Debounce from './components/debounce';
 import { useDebounce } from './components/debounce/hook/useDebounce';
 import MaskImage from './components/mask';
+import Posts from './components/mask/Posts';
 import { Comments } from './components/reusability/bad/comments';
 import { Button } from './styles/tailwind/button';
 import Button2 from './styles/tailwind/button/button2';
@@ -108,6 +109,11 @@ function App() {
 
       <div>
         <MaskImage/>
+      </div>
+
+      <div>
+
+        <Posts/>
       </div>
     </main>
   );

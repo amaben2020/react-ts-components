@@ -12,7 +12,43 @@
   -webkit-mask-image: url(#myMask);
 }
 
- 
+.mask{
+  position: relative;
+}
+
 .mask >  img{
   -webkit-mask-image: url('/images/mask.svg');
+    
+}
+
+.heading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.heading > h2{
+  font-size: 50px;
+  color: wheat;
+}
+
+
+.container-item{
+    position: relative;
+}
+.masked-element {
+ mask: url(#mask);
+  mask-mode: alpha; 
+
+
+}
+
+.masked-element img{
+  mask-image: var(--mask);
+  -webkit-mask-image: var(--mask);
+  width: 400px; /* Adjust the width and height as needed */
+  height: 300px;
+  border: 1px solid red;
 }
