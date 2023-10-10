@@ -8,6 +8,7 @@ import Debounce from './components/debounce';
 import { useDebounce } from './components/debounce/hook/useDebounce';
 import MaskImage from './components/mask';
 import Modal from './components/modal';
+import CustomModal from './components/modal/custom-modal';
 import useModal from './components/modal/hooks/useModal';
 import { Comments } from './components/reusability/bad/comments';
 import { Button } from './styles/tailwind/button';
@@ -28,7 +29,7 @@ function App() {
     <main>
       {value}
       <Debounce handleChange={handleChange} />
-
+       
       <div
         style={{
           marginTop: 20,
@@ -124,10 +125,16 @@ function App() {
       <button onClick={handleIsClose}> {state.isOpen ? "OPEN" : "CLOSE"}  </button>
       </div>
 
-  
-
       <div>
         <Modal isOpen={state.isOpen}   handleClose={handleIsClose} />
+      </div>
+
+
+      <div className='border p-20 mt-20'>
+      <button onClick={handleIsOpen}> {!state.isOpen ? "OPEN" : "CLOSE"}  </button>
+        <CustomModal isOpen={true} handleClose={handleIsClose} >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ratione error iusto. Voluptates ullam inventore nobis explicabo iste, nostrum asperiores deleniti quam odio expedita voluptatibus. Amet hic quia possimus mollitia.
+        </CustomModal>
       </div>
     </main>
   );
