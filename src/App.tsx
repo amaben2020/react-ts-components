@@ -119,10 +119,14 @@ function App() {
         <Posts/>
       </div> */}
 
+      <div className='flex justify-around'>
       <button onClick={handleIsOpen}> {!state.isOpen ? "OPEN" : "CLOSE"}  </button>
       <button onClick={handleIsClose}> {state.isOpen ? "OPEN" : "CLOSE"}  </button>
+      </div>
 
-      <div className='relative'>
+  
+
+      <div>
         <Modal isOpen={state.isOpen}   handleClose={handleIsClose} />
       </div>
     </main>
