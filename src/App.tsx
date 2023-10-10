@@ -7,7 +7,8 @@ import CssCustomProperties from './components/css-custom-properties';
 import Debounce from './components/debounce';
 import { useDebounce } from './components/debounce/hook/useDebounce';
 import MaskImage from './components/mask';
-import Posts from './components/mask/Posts';
+import Modal from './components/modal';
+import useModal from './components/modal/hooks/useModal';
 import { Comments } from './components/reusability/bad/comments';
 import { Button } from './styles/tailwind/button';
 import Button2 from './styles/tailwind/button/button2';
@@ -20,6 +21,8 @@ import { Truncate } from './styles/truncate';
 function App() {
   const { handleChange, value } = useDebounce();
   const { value: result, handleCopy } = useCopyToClipboard();
+
+  const {state, handleIsOpen, handleIsClose} = useModal()
 
   return (
     <main>
@@ -111,9 +114,16 @@ function App() {
         <MaskImage/>
       </div>
 
-      <div>
+      {/* <div>
 
         <Posts/>
+      </div> */}
+
+      <button onClick={handleIsOpen}> {!state.isOpen ? "OPEN" : "CLOSE"}  </button>
+      <button onClick={handleIsClose}> {state.isOpen ? "OPEN" : "CLOSE"}  </button>
+
+      <div className='relative'>
+        <Modal isOpen={state.isOpen}   handleClose={handleIsClose} />
       </div>
     </main>
   );
