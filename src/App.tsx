@@ -3,6 +3,7 @@ import useCopyToClipboard from './components/clipboard/hooks/useCopyToClipboard'
 import ProductCard from './components/component-pattern/compound-pattern';
 import { data } from './components/component-pattern/compound-pattern/product-card/mock/data';
 import withProductTitleAndPrice from './components/component-pattern/compound-pattern/product-card/with-product-title-and-price';
+import { VariantComponent } from './components/conditionals/conditional-properties';
 import CssCustomProperties from './components/css-custom-properties';
 import Debounce from './components/debounce';
 import { useDebounce } from './components/debounce/hook/useDebounce';
@@ -136,6 +137,19 @@ function App() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ratione error iusto. Voluptates ullam inventore nobis explicabo iste, nostrum asperiores deleniti quam odio expedita voluptatibus. Amet hic quia possimus mollitia.
         </CustomModal>
       </div>
+
+      <div className='p-10 border'>
+        Conditional React Props
+
+
+        <VariantComponent variant='element' message={<Button/>} componentName='Button' border={true}>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed dignissimos dolore reiciendis quos similique esse veniam quas! Ea dolorem magni debitis! Ipsum, maiores nostrum expedita veniam laboriosam numquam perferendis facere.
+      </VariantComponent>
+
+      <VariantComponent variant='number' message={2}>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed dignissimos dolore reiciendis quos similique esse veniam quas! Ea dolorem magni debitis! Ipsum, maiores nostrum expedita veniam laboriosam numquam perferendis facere.
+      </VariantComponent>
+    </div>
     </main>
   );
 }
