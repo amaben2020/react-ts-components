@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-
+// https://dev.to/maissenayed/conditional-react-props-with-typescript-43lg
  
 type CommonProps = {
   children: ReactNode
