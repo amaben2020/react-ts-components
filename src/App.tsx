@@ -12,6 +12,7 @@ import Modal from './components/modal';
 import CustomModal from './components/modal/custom-modal';
 import useModal from './components/modal/hooks/useModal';
 import { Comments } from './components/reusability/bad/comments';
+import TestPage from './components/toggle';
 import { Button } from './styles/tailwind/button';
 import Button2 from './styles/tailwind/button/button2';
 import ContainerQueries from './styles/tailwind/container-queries';
@@ -19,6 +20,7 @@ import { Works } from './styles/tailwind/dynamic-u-c/Works';
 import InputUnstyleable from './styles/tailwind/input';
 import { Layout } from './styles/tailwind/layout';
 import { SpecialButton } from './styles/tailwind/merge';
+import InputComponent from './styles/tailwind/spread-props';
 import { Truncate } from './styles/truncate';
 function App() {
   const { handleChange, value } = useDebounce();
@@ -28,9 +30,10 @@ function App() {
 
   return (
     <main>
+     
       {value}
       <Debounce handleChange={handleChange} />
-       
+     
       <div
         style={{
           marginTop: 20,
@@ -45,6 +48,7 @@ function App() {
           previous={() => {}}
           itemClick={() => {}}
         />
+          <InputComponent label='Benoski' className="text-red-500" placeholder="era"/>  
       </div>
 
       <div>
@@ -65,7 +69,10 @@ function App() {
         Merge:
         <SpecialButton className="p-3" />
         <Truncate />
-        <InputUnstyleable />
+     
+            <InputUnstyleable />
+       
+      
         <ContainerQueries />
         <div>
           Class Variance Authority
@@ -149,7 +156,11 @@ function App() {
       <VariantComponent variant='number' message={2}>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed dignissimos dolore reiciendis quos similique esse veniam quas! Ea dolorem magni debitis! Ipsum, maiores nostrum expedita veniam laboriosam numquam perferendis facere.
       </VariantComponent>
-    </div>
+      </div>
+      
+      <div>
+        <TestPage/>
+      </div>
     </main>
   );
 }
