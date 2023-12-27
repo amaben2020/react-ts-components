@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import SimpleAnimation from './components/animations/simple';
+import Stagger from './components/animations/stagger';
 import Card from './components/card';
 import useCopyToClipboard from './components/clipboard/hooks/useCopyToClipboard';
 import ProductCard from './components/component-pattern/compound-pattern';
@@ -10,10 +12,9 @@ import CssCustomProperties from './components/css-custom-properties';
 import Debounce from './components/debounce';
 import { useDebounce } from './components/debounce/hook/useDebounce';
 import MaskImage from './components/mask';
-import Modal from './components/modal';
-import CustomModal from './components/modal/custom-modal';
 import useModal from './components/modal/hooks/useModal';
 import Navigation from './components/navigation';
+import Portals from './components/portals';
 import { Comments } from './components/reusability/bad/comments';
 import TestPage from './components/toggle';
 import { Button } from './styles/tailwind/button';
@@ -52,6 +53,16 @@ function App() {
 
   return (
     <main>
+      {/* <Planets/> */}
+
+      <Stagger/>
+
+      <Portals/>
+
+      <SimpleAnimation/>
+
+    {/* <Flexbox/> */}
+
       {books.map((data, _) => (
         <>
           <Card key={data.title} title={data.title} description={data.description} price={data.price} />
@@ -179,17 +190,17 @@ function App() {
       <button onClick={handleIsClose}> {state.isOpen ? "OPEN" : "CLOSE"}  </button>
       </div>
 
-      <div>
+      {/* <div>
         <Modal isOpen={state.isOpen}   handleClose={handleIsClose} />
-      </div>
+      </div> */}
 
 
-      <div className='border p-20 mt-20'>
+      {/* <div className='border p-20 mt-20'>
       <button onClick={handleIsOpen}> {!state.isOpen ? "OPEN" : "CLOSE"}  </button>
         <CustomModal isOpen={true} handleClose={handleIsClose} >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ratione error iusto. Voluptates ullam inventore nobis explicabo iste, nostrum asperiores deleniti quam odio expedita voluptatibus. Amet hic quia possimus mollitia.
         </CustomModal>
-      </div>
+      </div> */}
 
       <div className='p-10 border'>
         Conditional React Props
