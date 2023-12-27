@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import './App.css';
+import Card from './components/card';
 import useCopyToClipboard from './components/clipboard/hooks/useCopyToClipboard';
 import ProductCard from './components/component-pattern/compound-pattern';
 import { data } from './components/component-pattern/compound-pattern/product-card/mock/data';
@@ -11,6 +13,7 @@ import MaskImage from './components/mask';
 import Modal from './components/modal';
 import CustomModal from './components/modal/custom-modal';
 import useModal from './components/modal/hooks/useModal';
+import Navigation from './components/navigation';
 import { Comments } from './components/reusability/bad/comments';
 import TestPage from './components/toggle';
 import { Button } from './styles/tailwind/button';
@@ -26,10 +29,53 @@ function App() {
   const { handleChange, value } = useDebounce();
   const { value: result, handleCopy } = useCopyToClipboard();
 
-  const {state, handleIsOpen, handleIsClose} = useModal()
+  const { state, handleIsOpen, handleIsClose } = useModal()
+  
+  const books = [
+    {
+      title: "The catcher in the Rye",
+      description: "The catcher in the Rye is a great book by JD Salinger",
+      price: 232
+    },
+    {
+      title: "To kill a mockingbird",
+      description: "To kill a mockingbird",
+      price: 532
+    },
+  ]
+
+  type TBook = typeof books
+  
+  const [selectedBook, setSelectedBook] = useState<TBook | null>(null)
+
+  const handleSelectedBook = (item: TBook) => setSelectedBook(item)
 
   return (
     <main>
+      {books.map((data, _) => (
+        <>
+          <Card key={data.title} title={data.title} description={data.description} price={data.price} />
+        
+        <button onClick={() => handleSelectedBook(data)}> Select </button>
+        </>
+      
+      ))}
+
+
+      {selectedBook && (
+        <div style={{
+          border: "2px solid green"
+        }}>
+          <p>Mimicks modal</p>
+          <p>{ selectedBook?.title}</p>
+          <p>{ selectedBook?.description}</p>
+          <p>$ { selectedBook?.price}</p>
+        </div>
+      )}
+      
+      <Navigation />
+      
+      {/* <SimpleAnimation/> */}
      
       {value}
       <Debounce handleChange={handleChange} />
@@ -48,7 +94,7 @@ function App() {
           previous={() => {}}
           itemClick={() => {}}
         />
-          <InputComponent label='Benoski' className="text-red-500" placeholder="era"/>  
+          <InputComponent label='Benoski' className="text-red-500 p-3 border mx-2" placeholder="era" />  
       </div>
 
       <div>
