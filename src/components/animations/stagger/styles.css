@@ -27,7 +27,7 @@
 
 .header{
   font-size: 60px;
-  animation: headers 1s;
+  animation: headers 1.5s;
   /* transition: all 0.3s ease-in-out; */
 }
 
@@ -53,9 +53,11 @@
 
 @keyframes slideIn{
   from{
+    opacity: 0;
   transform: translateX(-100%);
   }
   to{
     transform: none;
+    opacity: 1;
   }
 }
