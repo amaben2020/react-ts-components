@@ -10,6 +10,11 @@ const Stagger = () => {
         </>
       ))}
   
+      <div>
+        <h3 className='header'>Hello World!</h3>
+
+        <p className='text'>We're waiting</p>
+  </div>
    
     </div>
   )

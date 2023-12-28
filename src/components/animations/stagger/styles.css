@@ -10,9 +10,9 @@
   background-color: black;
   margin: 10px;
   border-radius: 100%;
-  animation: jingle calc(var(--i) * 0.5s) ease-in-out;
-  transition: transform 0.3s cubic-bezier(0.5, 1, 0.5, 1);
-  animation-direction: both;
+  animation: jingle 0.3s cubic-bezier(0.5, 1, 0.5, 1) calc(var(--i) * 0.2s) ;
+  transition: transform 0.3s ease-in-out;
+  animation-direction: forwards;
 }
 
 @keyframes jingle {
@@ -20,8 +20,42 @@
     transform: none;
   }
 
-
   to{
-    transform: translateX(20vw);
+    transform: translateX(300%);
+  }
+}
+
+.header{
+  font-size: 60px;
+  animation: headers 1s;
+  /* transition: all 0.3s ease-in-out; */
+}
+
+.text{
+  font-size: 40px;
+  animation: slideIn 1s;
+  /* transition: all 0.3s ease-in-out; */
+}
+
+@keyframes headers{
+  from{
+  transform: translateY(100%);
+  opacity: 0;
+  }
+  50%{
+    opacity: 0.7;
+  }
+  to{
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn{
+  from{
+  transform: translateX(-100%);
+  }
+  to{
+    transform: none;
   }
 }
