@@ -12,12 +12,13 @@
   border-radius: 100%;
   animation: jingle 0.3s cubic-bezier(0.5, 1, 0.5, 1) calc(var(--i) * 0.2s) ;
   transition: transform 0.3s ease-in-out;
-  animation-direction: forwards;
+  animation-direction: both;
 }
 
 @keyframes jingle {
   from{
     transform: none;
+
   }
 
   to{

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import SimpleAnimation from './components/animations/simple';
-import Stagger from './components/animations/stagger';
 import Card from './components/card';
 import useCopyToClipboard from './components/clipboard/hooks/useCopyToClipboard';
 import ProductCard from './components/component-pattern/compound-pattern';
@@ -16,6 +15,7 @@ import useModal from './components/modal/hooks/useModal';
 import Navigation from './components/navigation';
 import Portals from './components/portals';
 import { Comments } from './components/reusability/bad/comments';
+import SortableList from './components/sortable-list';
 import TestPage from './components/toggle';
 import { Button } from './styles/tailwind/button';
 import Button2 from './styles/tailwind/button/button2';
@@ -53,9 +53,12 @@ function App() {
 
   return (
     <main>
+
+      <SortableList/>
+
       {/* <Planets/> */}
 
-      <Stagger/>
+      {/* <Stagger/> */}
 
       <Portals/>
 
