@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { toast } from "react-toastify"
 import Card from "./components/Card"
 import { Search } from "./components/Search"
 import { DATA } from "./data"
@@ -13,9 +14,9 @@ const SortableList = () => {
   const [addedSkills, setAddedSkills] = useState<TSkill[]>([])
 
   const handleAddSkill = (skill: TSkill) => {
-    console.log(skill);
     if (addedSkills.length > 4) {
-      alert("Maximum skills exceeded")
+      toast.warn("Maximum skills exceeded")
+      return;
     }
     setAddedSkills(p => [...p, skill])
     setData(data.filter(item => !item.skill.includes(skill.skill)))

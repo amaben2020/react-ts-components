@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import SimpleAnimation from './components/animations/simple';
 import Card from './components/card';
@@ -26,6 +28,7 @@ import { Layout } from './styles/tailwind/layout';
 import { SpecialButton } from './styles/tailwind/merge';
 import InputComponent from './styles/tailwind/spread-props';
 import { Truncate } from './styles/truncate';
+
 function App() {
   const { handleChange, value } = useDebounce();
   const { value: result, handleCopy } = useCopyToClipboard();
@@ -53,6 +56,7 @@ function App() {
 
   return (
     <main>
+       <ToastContainer position='top-center'/>
 
       <SortableList/>
 
