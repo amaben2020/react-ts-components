@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { useState } from "react";
 import Select, {
   components,
   DropdownIndicatorProps,
@@ -33,15 +32,13 @@ export const Search = ({
   ...props
 }: Props) => {
  
-  const [selected, setSelected] = useState()
-
+ 
   const dataOptions = props.data.map(item => ({
-    options: [{label: item.skill }]
+    options: [{label: item.skill, value: item.id }]
   }))
-  
-  console.log("selected", selected);
 
   console.log(dataOptions);
+ 
   return (
     <Select
       components={{DropdownIndicator}}
@@ -59,8 +56,8 @@ export const Search = ({
       }}
 
       onChange={(v) => {
-        const res = { skill: v.label }
-        props.handleAddSkill(res )
+        const res = { skill: v.label, id: v.value }
+        props.handleAddSkill(res)
       } }
       
       classNames={{

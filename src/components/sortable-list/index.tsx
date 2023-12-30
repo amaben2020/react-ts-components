@@ -14,6 +14,9 @@ const SortableList = () => {
 
   const handleAddSkill = (skill: TSkill) => {
     console.log(skill);
+    if (addedSkills.length > 4) {
+      alert("Maximum skills exceeded")
+    }
     setAddedSkills(p => [...p, skill])
     setData(data.filter(item => !item.skill.includes(skill.skill)))
   }
@@ -40,7 +43,7 @@ const SortableList = () => {
               <p>No Skills added</p>
         </div>}
 
-          <Search data={data} handleAddSkill={ handleAddSkill} />
+       {addedSkills.length > 0 &&   <Search data={data} handleAddSkill={ handleAddSkill} />}
          
         </div>
         <div className="flex-2 basis-[30%]">
